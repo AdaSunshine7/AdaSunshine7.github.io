@@ -576,11 +576,24 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       lang       : '' || 'zh-cn',
       path       : location.pathname,
       recordIP   : false,
-      serverURLs : ''
+      serverURLs : 'https://www.gravatar.com/avatar/'
     });
   }, window.Valine);
 });
 </script>
+
+new Valine({
+    el: '#comments' ,
+    verify: true,
+    notify: true,
+    appId: 'IkFcKcxEEbGaFpctO5RWgrfF-gzGzoHsz',
+    appKey: 'tABcfwDG6AL06WdR0rhVSSyR',
+    placeholder: 'Just go go',
+    avatar:'mm',
+    guest_info:guest,
+    pageSize:'10' || 10,
+    avatar_cdn:'',
+});
 
 </body>
 </html>
