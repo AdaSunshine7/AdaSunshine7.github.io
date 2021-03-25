@@ -81,7 +81,7 @@
 
 <link rel="alternate" href="/atom.xml" title="Ada的博客" type="application/atom+xml">
 </head>
-
+<script id="ribbon" type="text/javascript" size="100" alpha="0.3" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband">
@@ -406,7 +406,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5字</span>
+  <span class="post-count">博客全站共13字</span>
 </div>
 
 
@@ -542,11 +542,35 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       path       : location.pathname,
       recordIP   : false,
       serverURLs : '',
-      avatar_cdn:'https://www.gravatar.com/avatar/',
-      avatar_cdn:'https://www.gravatar.com/avatar/',
     });
   }, window.Valine);
 });
 </script>
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'IkFcKcxEEbGaFpctO5RWgrfF-gzGzoHsz',
+        appKey: 'tABcfwDG6AL06WdR0rhVSSyR',
+        placeholder: '请输入评论...',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+        avatar_cdn:'https://www.gravatar.com/avatar/',
+});
+  </script>
+
+ 
 </body>
 </html>
